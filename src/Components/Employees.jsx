@@ -1,21 +1,15 @@
 import femaleProfile from "../images/femaleProfile.jpg";
 import maleProfile from "../images/maleProfile.jpg";
-
+import Teams from "./Teams";
 const Employees = (props) => {
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-6">
-          <select
-            className="form-select form-select-lg"
-            value={props.selectedTeam}
-            onChange={props.handleTeamSelectionChange}
-          >
-            <option value="TeamA">TeamA</option>
-            <option value="TeamB">TeamB</option>
-            <option value="TeamC">TeamC</option>
-            <option value="TeamD">TeamD</option>
-          </select>
+          <Teams
+            selectedTeam={props.selectedTeam}
+            handleTeamSelectionChange={props.handleTeamSelectionChange}
+          />
         </div>
       </div>
 
