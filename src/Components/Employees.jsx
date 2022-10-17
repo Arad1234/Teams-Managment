@@ -1,48 +1,19 @@
-import femaleProfile from "../images/femaleProfile.jpg";
-import maleProfile from "../images/maleProfile.jpg";
 import Teams from "./Teams";
-const Employees = (props) => {
+import TeamMembers from "./TeamMembers";
+
+const Employees = () => {
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-6">
-          <Teams
-            selectedTeam={props.selectedTeam}
-            handleTeamSelectionChange={props.handleTeamSelectionChange}
-          />
+          <Teams />
         </div>
       </div>
 
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-8">
           <div className="card-collection">
-            {props.employees.map((employee) => (
-              <div
-                key={employee.id}
-                onClick={props.handleEmployeeCardClick}
-                id={employee.id}
-                className={
-                  employee.teamName === props.selectedTeam
-                    ? "card m-2 standout"
-                    : "card m-2"
-                }
-                style={{ cursor: "pointer" }}
-              >
-                {employee.gender === "female" ? (
-                  <img src={femaleProfile} className="card-img-top" />
-                ) : (
-                  <img src={maleProfile} className="card-img-top" />
-                )}
-
-                <div className="card-body">
-                  <h5 className="card-title">Full Name: {employee.fullName}</h5>
-                  <p className="card-text">
-                    <b>Designation: </b>
-                    {employee.designation}
-                  </p>
-                </div>
-              </div>
-            ))}
+            <TeamMembers />
           </div>
         </div>
       </div>

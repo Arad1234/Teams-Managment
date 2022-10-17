@@ -1,6 +1,12 @@
 import React from "react";
+import { useData } from "../context/DataProvider";
 
-const Header = ({ countOfMembers, selectedTeam }) => {
+const Header = () => {
+  const { employees, selectedTeam } = useData();
+
+  const countOfMembers = employees.filter(
+    (employee) => employee.teamName === selectedTeam
+  ).length;
   return (
     <header className="container">
       <div className="row justify-content-center mt-3 mb-4">

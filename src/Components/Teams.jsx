@@ -1,6 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useData } from "../context/DataProvider";
 
-const Teams = ({ selectedTeam, handleTeamSelectionChange }) => {
+const Teams = () => {
+  const { selectedTeam, handleTeamSelectionChange } = useData();
+
   return (
     <select
       className="form-select form-select-lg"

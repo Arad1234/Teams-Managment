@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useData } from "../context/DataProvider";
 
-const GroupedTeamMembers = ({ employees, selectedTeam, setSelectedTeam }) => {
+const GroupedTeamMembers = () => {
+  const { employees, selectedTeam, setSelectedTeam } = useData();
+
   const groupTeamMembers = () => {
     var teams = [];
 
@@ -83,7 +86,7 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setSelectedTeam }) => {
               <hr />
               {teamObj.employees.map((employee) => {
                 return (
-                  <div className="mt-2">
+                  <div key={employee.id} className="mt-2">
                     <h5 className="card-title mt-2">
                       <span className="text-dark">
                         Full Name: {employee.fullName}
